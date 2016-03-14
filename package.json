@@ -4,9 +4,9 @@
   "description": "Method auto-bind for ES6 (ES2015) classes",
   "main": "lib/autobind.js",
   "scripts": {
-    "build": "babel src --ignore '_*' --out-dir lib",
+    "build-lib": "babel src --ignore '_*' --out-dir lib",
     "lint": "eslint --max-warnings 0 .",
-    "prepublish": "npm run build",
+    "prepublish": "npm run build-lib",
     "test": "npm run lint && npm run test-src",
     "test-src": "mocha"
   },
