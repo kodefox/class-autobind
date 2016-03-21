@@ -1,6 +1,6 @@
 {
   "name": "class-autobind",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Method auto-bind for ES6 (ES2015) classes",
   "main": "lib/autobind.js",
   "scripts": {
