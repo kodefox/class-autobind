@@ -1,2 +1,7 @@
+.babelrc
+.eslintignore
+.eslintrc
+.flowconfig
+.travis.yml
 _*
 /src
