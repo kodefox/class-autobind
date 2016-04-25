@@ -4,11 +4,12 @@
   "description": "Method auto-bind for ES6 (ES2015) classes",
   "main": "lib/autobind.js",
   "scripts": {
-    "build-lib": "rimraf lib && babel src --ignore '_*' --out-dir lib",
+    "build": "rimraf lib && babel src --ignore '_*' --out-dir lib",
+    "prepublish": "npm run build",
     "lint": "eslint --max-warnings 0 .",
-    "prepublish": "npm run build-lib",
-    "test": "npm run lint && npm run test-src",
-    "test-src": "mocha src/__tests__/*.js src/**/__tests__/*.js"
+    "typecheck": "flow",
+    "test-src": "mocha src/__tests__/*.js src/**/__tests__/*.js",
+    "test": "npm run lint && npm run typecheck && npm run test-src"
   },
   "dependencies": {},
   "devDependencies": {
@@ -24,6 +25,7 @@
     "eslint-plugin-flow-vars": "^0.2.1",
     "eslint-plugin-react": "^4.2.1",
     "expect": "^1.15.2",
+    "flow-bin": "^0.23.1",
     "mocha": "^2.4.5",
     "rimraf": "^2.5.2"
   },
