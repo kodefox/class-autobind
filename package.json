@@ -29,17 +29,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/sstur/class-autobind.git"
+    "url": "git+ssh://git@github.com/kodefox/class-autobind.git"
   },
   "keywords": [
     "react",
     "autobind",
     "es6-class"
   ],
-  "author": "sstur@me.com",
+  "author": "team@kodefox.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sstur/class-autobind/issues"
+    "url": "https://github.com/kodefox/class-autobind/issues"
   },
-  "homepage": "https://github.com/sstur/class-autobind#readme"
+  "homepage": "https://github.com/kodefox/class-autobind#readme"
 }
