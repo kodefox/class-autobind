@@ -21,8 +21,10 @@ function isFunction(item) {
   return (typeof item === 'function');
 }
 
-export default function autobind(instance: Object) {
-  let proto = instance.constructor.prototype;
+export default function autobind(instance: Object, proto: ?Object) {
+  if (proto == null) {
+    proto = Object.getPrototypeOf(instance);
+  }
   let propertyNames = Object.getOwnPropertyNames(proto);
   for (let name of propertyNames) {
     let value = proto[name];

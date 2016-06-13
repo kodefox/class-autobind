@@ -33,4 +33,21 @@ describe('autobind', () => {
     expect(foo.render).toBe(Foo.prototype.render);
     expect(invoke(foo.render)).toBe(undefined);
   });
+
+  it('should NOT accept optional second param', () => {
+    class Foo {
+      constructor() {
+        // When called from a subclass via super(), we cannot auto-detect which
+        // prototype we should use as a source for autobind.
+        autobind(this, Foo.prototype);
+      }
+      getThis() {
+        return this;
+      }
+    }
+    class Bar extends Foo {}
+    let bar = new Bar();
+    expect(bar.getThis).toNotBe(Foo.prototype.getThis);
+    expect(invoke(bar.getThis)).toBe(bar);
+  });
 });

@@ -25,6 +25,28 @@ class MyComponent extends React.Component {
 }
 ```
 
+## Advanced Usage:
+
+If your component will possibly be subclassed (you really should not do this, but some third-party libraries like [react-css-modules](https://npmjs.com/package/react-css-modules) do so) then you will need to specify which prototype will be the source of methods that are to be automatically bound.
+
+```js
+import autobind from 'class-autobind';
+
+class MyComponent extends React.Component {
+  constructor() {
+    super(...arguments);
+    autobind(this, MyComponent.prototype); // Note the second parameter.
+  }
+  render() {
+    /* ... */
+  }
+}
+
+class MySubClassedComponent extends MyComponent {
+  /* This is probably a very bad idea. */
+}
+```
+
 ## License
 
 This software is [BSD Licensed](/LICENSE).
