@@ -13,7 +13,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "babel-cli": "^6.9.0",
+    "babel-cli": "^6.10.1",
     "babel-core": "^6.9.1",
     "babel-eslint": "^6.0.4",
     "babel-plugin-transform-class-properties": "^6.9.1",
@@ -21,12 +21,12 @@
     "babel-preset-es2015-loose": "^7.0.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.5.0",
-    "eslint": "^2.11.1",
+    "eslint": "^2.12.0",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-flow-vars": "^0.4.0",
     "eslint-plugin-react": "^5.1.1",
     "expect": "^1.20.1",
-    "flow-bin": "^0.26.0",
+    "flow-bin": "^0.27.0",
     "mocha": "^2.5.3",
     "rimraf": "^2.5.2"
   },
