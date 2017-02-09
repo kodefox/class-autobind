@@ -6,6 +6,10 @@ For example, this allows us to pass a method to an event handler `element.addEve
 
 Note: This has some specific logic for React, but could be used in any project.
 
+## Installation:
+
+`npm install --save class-autobind`
+
 ## Usage:
 
 ```js
