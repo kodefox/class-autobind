@@ -21,12 +21,24 @@ function isFunction(item) {
   return (typeof item === 'function');
 }
 
+function isAccessor(proto: ?Object, name: String) {
+  let desc = Object.getOwnPropertyDescriptor(proto, name);
+  if (!!desc && (typeof desc.get === 'function' || typeof desc.set === 'function')) {
+    return true;
+  }
+
+  return false;
+}
+
 export default function autobind(instance: Object, proto: ?Object) {
   if (proto == null) {
     proto = Object.getPrototypeOf(instance);
   }
   let propertyNames = Object.getOwnPropertyNames(proto);
   for (let name of propertyNames) {
+    if (isAccessor(proto, name)) {
+      continue;
+    }
     let value = proto[name];
     if (isFunction(value) && !isExcluded(name)) {
       instance[name] = proto[name].bind(instance);
