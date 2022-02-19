@@ -50,4 +50,26 @@ describe('autobind', () => {
     expect(bar.getThis).toNotBe(Foo.prototype.getThis);
     expect(invoke(bar.getThis)).toBe(bar);
   });
+
+  it('should NOT bind class accessors', () => {
+    class Foo {
+      constructor() {
+        autobind(this, Foo.prototype);
+      }
+
+      get getAccessor() {
+        throw 'Accesor called';
+      }
+
+      set setAccessor(val) {
+        this.value = val;
+      }
+    }
+    try {
+      let foo = new Foo();
+      expect(foo).toNotBe(undefined);
+    } catch (e) {
+      expect(e).toBe(undefined);
+    }
+  });
 });
